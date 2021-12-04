@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<channel>
+  <item>
+    <title>Dockerhub</title>
+    <link>https://hub.docker.com/</link>
+    <description>Une librairie d'image container</description>
+  </item>
+  <item>
+    <title>Framasoft</title>
+    <link>https://framasoft.org/</link>
+    <description>Un réseau dédié à la promotion du « libre » en général et du logiciel libre en particulier.</description>
+  </item>
+  <item>
+    <title>Duck Duck Go</title>
+    <link>https://duckduckgo.com/</link>
+    <description>Le moteur de recherche qui ne trace pas ses utilisateurs.</description>
+  </item>
+  <item>
+    <title>Campus Virtuel TIC</title>
+    <link>https://cvtic.unilim.fr/</link>
+    <description>Site internet du CvTIC.</description>
+  </item>
+</channel>
