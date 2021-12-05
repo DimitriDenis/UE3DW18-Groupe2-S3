@@ -46,6 +46,28 @@ class LinkDAO extends DAO
         return $_links;
     }
 
+      /**
+     * 
+     * Retourne les 15 derniers liens 
+     * @return array Liste de 15 liens.
+     */
+
+    public function findLastLinks() {
+        $sql = "
+            SELECT * 
+            FROM tl_liens 
+            DESC LIMIT 15
+        ";
+        $result = $this->getDb()->fetchAll($sql);
+
+        // Convert query result to an array of domain objects
+        $_links = array();
+        foreach ($result as $row) {
+            $linkId          = $row['lien_id'];
+            $_links[$linkId] = $this->buildDomainObject($row);
+        }
+        return $_links;
+    }
     /**
      * Returns a link matching the supplied id.
      *

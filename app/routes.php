@@ -3,6 +3,8 @@
 // Home page
 $app->get('/', "Watson\Controller\HomeController::indexAction")->bind('home');
 
+// Rss zone
+$app->get('/rss', "Watson\Controller\RssController::functionRss")->bind('rss');
 // Detailed info about a link
 $app->match('/link/{id}', "Watson\Controller\HomeController::linkAction")->bind('link');
 
@@ -14,6 +16,7 @@ $app->get('/login', "Watson\Controller\HomeController::loginAction")->bind('logi
 
 // Admin zone
 $app->get('/admin', "Watson\Controller\AdminController::indexAction")->bind('admin');
+
 
 // Add a new link
 $app->match('/admin/link/add', "Watson\Controller\AdminController::addLinkAction")->bind('admin_link_add');
