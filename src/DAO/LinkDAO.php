@@ -3,6 +3,7 @@
 namespace Watson\DAO;
 
 use Watson\Domain\Link;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 class LinkDAO extends DAO
 {
@@ -187,4 +188,18 @@ class LinkDAO extends DAO
     public function deleteAllByUser($userId) {
         $this->getDb()->delete('tl_liens', array('user_id' => $userId));
     }
+
+    public function executeList()
+  {
+    
+    $c = new Criteria();
+    $c->add(ArticlePeer::PUBLISHED, true);
+    $pager = new sfPropelPager('Liens', 10);
+    $pager->setCriteria($c);
+    $pager->setPage($this->getRequestParameter('page', 1));
+    $pager->init();
+    $this->pager = $pager;
+    
+  }
+
 }

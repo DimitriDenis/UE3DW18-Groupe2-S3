@@ -4,6 +4,7 @@ namespace Watson\Controller;
 
 use Silex\Application;
 use Symfony\Component\HttpFoundation\Request;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 use Watson\Domain\Link;
 use Watson\Domain\User;
 use Watson\Domain\Tag;
@@ -226,4 +227,6 @@ class AdminController {
         // Redirect to admin home page
         return $app->redirect($app['url_generator']->generate('admin'));
     }
+
+
 }
